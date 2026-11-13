@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جعبه‌ی دلیل‌های دوست داشتنت</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
+<style>
+:root{--choc:#1d0c0c;--choc2:#2e1212;--cream:#f7e3d4;--rose:#e0245e;--pink:#ff8fb3;--gold:#f2c28b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{min-height:100vh;font-family:"Vazirmatn",Tahoma,sans-serif;color:var(--cream);background:radial-gradient(120% 70% at 50% 0%,#4a1620 0%,var(--choc2) 45%,var(--choc) 100%) fixed;display:flex;justify-content:center;overflow-x:hidden}
+.float{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float span{position:absolute;bottom:-40px;animation:up linear infinite;opacity:0}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.6}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1;width:100%;max-width:460px;padding:20px 18px 44px;text-align:center}
+.top{font-size:56px;animation:beat 1.6s ease-in-out infinite;display:inline-block;filter:drop-shadow(0 8px 20px rgba(224,36,94,.6))}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}45%{transform:scale(1.07)}}
+h1{font-size:1.65rem;font-weight:800;color:var(--pink);margin-top:4px}
+.sub{margin-top:8px;line-height:2;font-size:1rem}
+.count{margin:14px auto 0;display:inline-block;padding:4px 16px;border-radius:999px;background:rgba(224,36,94,.15);border:1px solid rgba(255,143,179,.4);color:var(--gold);font-size:.9rem}
+.grid{margin-top:18px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.box{aspect-ratio:1;border:none;border-radius:16px;cursor:pointer;font-family:inherit;font-weight:800;font-size:1.05rem;color:#fff;position:relative;background:linear-gradient(160deg,#e8335f,#9d0c2c);box-shadow:0 6px 14px rgba(0,0,0,.4);transition:transform .2s;-webkit-tap-highlight-color:transparent}
+.box::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:7px;margin-left:-3.5px;background:rgba(255,214,150,.75)}
+.box::after{content:"";position:absolute;left:0;right:0;top:50%;height:7px;margin-top:-3.5px;background:rgba(255,214,150,.75)}
+.box span{position:relative;z-index:1;background:#7d0820;border-radius:999px;padding:1px 7px;font-size:.9rem}
+.box:active{transform:scale(.92)}
+.box.open{background:linear-gradient(160deg,#3b1519,#26100f);border:1px solid rgba(255,143,179,.45);box-shadow:none}
+.box.open::before,.box.open::after{display:none}
+.box.open span{background:none;font-size:1.3rem;padding:0}
+.rand{margin-top:22px;font-family:inherit;font-weight:800;font-size:1.05rem;color:#fff;border:none;border-radius:999px;padding:.8em 1.8em;cursor:pointer;background:linear-gradient(180deg,#f0346a,#bb0f3d);box-shadow:0 8px 22px rgba(224,36,94,.5)}
+.rand:active{transform:scale(.97)}
+.scene{margin-top:26px;font-size:34px;letter-spacing:10px}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#modal{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(15,5,6,.8);backdrop-filter:blur(4px)}
+#modal.show{display:flex}
+.card{width:100%;max-width:360px;padding:30px 24px 24px;border-radius:34px 34px 34px 8px;background:linear-gradient(160deg,#3b1519,#26100f);border:1.5px solid rgba(255,143,179,.5);box-shadow:0 0 0 6px rgba(224,36,94,.08),0 20px 50px rgba(0,0,0,.6);animation:pop .4s cubic-bezier(.3,1.5,.5,1)}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.card .n{font-size:.95rem;color:var(--gold)}
+.card .big{font-size:46px;margin:6px 0}
+.card p{white-space:pre-line;font-size:1.2rem;line-height:2.1;font-weight:600;color:#ffd3e1}
+.card button{margin-top:20px;font-family:inherit;font-weight:800;font-size:1rem;color:#fff;border:none;border-radius:999px;padding:.7em 1.8em;cursor:pointer;background:linear-gradient(180deg,#f0346a,#bb0f3d)}
+#finale{margin-top:22px;display:none;padding:22px 18px;border-radius:26px;background:rgba(224,36,94,.12);border:1px solid rgba(255,143,179,.45);line-height:2.1;font-size:1.1rem}
+#finale.show{display:block;animation:pop .5s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="float" id="float"></div>
+<main>
+  <div class="top">🎁</div>
+  <h1>جعبه‌ی دلیل‌های دوست داشتنت</h1>
+  <p class="sub">هوزان جونم، ۳۰ تا جعبه، هر کدوم یه چیزی از دل من برای تو.<br>هر روز یکی‌شو باز کن، یا امشب همه‌شو 🫶</p>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+  <button class="rand" id="rand" type="button">یه دلیل تصادفی بده 🎲</button>
+  <div id="finale">همه‌ی جعبه‌ها رو باز کردی ولی دلیل‌های من تموم‌شدنی نیست.<br>هر روز یه دلیل جدید پیدا می‌کنم، راپونزل خانم 🌼🫀</div>
+  <div class="scene" aria-hidden="true">🌹🍫☕🌸</div>
+</main>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="card">
+    <div class="n" id="mn"></div>
+    <div class="big" id="me">💗</div>
+    <p id="mt"></p>
+    <button id="mc" type="button">قلبم 💗</button>
+  </div>
+</div>
+
+<script>
+// ✏️ دلیل‌ها: هر خط یک جعبه است. می‌تونی متن‌ها رو با خاطره‌های واقعی خودتون عوض کنی.
+var REASONS=[
+"شیرین شیرین، هوزان شیرین، نقل و نبات، مشک و پشی، هوزان چنی تو شیرینی. (میدونی چرا این اولین جمله‌ست 😄)",
+"هر وقت بوی بابونه میاد، اولین کسی که یادم میاد تویی.",
+"موهات رو دوست دارم. اون بلندیش، اون مشکی بودنش. یه روز می‌خوام فقط بشینم و ناز نازیشون کنم، نازارگم.",
+"با لپ‌هات هیچ‌وقت کنار نمیام. هر بار می‌بینمشون دلم می‌خواد بگیرمشون.",
+"دلم می‌خواد یه شب برات هات چاکلت درست کنم، همونی که روش کلی خامه داره، و فقط بشینم نگات کنم که می‌خوری.",
+"هر بار یه بیسکوئیت ماهی دستت می‌بینم، دلم یه جوری نرم میشه.",
+"وقتی از کتابی که دوست داشتی حرف می‌زنی، چشمات یه جوری برق می‌زنه که دلم می‌خواد بشینم تا ساعت‌ها گوش بدم.",
+"تو راپونزلِ منی. موهات، چشمات، و اینکه چیزایی که دوست داری رو با تمام دلت دوست داری.",
+"قذات له گیانگم. نمی‌دونم چرا، ولی وقتی این رو می‌گم دلم آروم میشه.",
+"دردت و گیانم. هر وقت ناراحتی، دلم می‌خواد جای تو باشم تا تو درد نکشی.",
+"بوم قربانت. حتی وقتی بدخلقی هم دوستت دارم.",
+"این شب هم میگذره عشقم. و فردا صبح اولین پیام من اینه: دوستت دارم.",
+"دلم می‌خواد الان کنارت بودم، یه پتو می‌کشیدم روی هردومون، راپونزل می‌ذاشتیم و تو سرت رو می‌ذاشتی روی شونه‌م.",
+"ئاواتکم. معنیش رو که می‌دونی؟ آرزوی من. و تو همون آرزویی.",
+"روناکی چاوگانم، هر شب که ناراحتی، دلم می‌خواد یه چیزی بگم که حالت بهتر بشه.",
+"هر وقت یه کتاب خوب پیدا می‌کنم، اولین فکرم اینه: «هوزان باید اینو بخونه».",
+"می‌گن بابونه دل رو آروم می‌کنه. تو برای من از هر بابونه‌ای بیشتر آرومی.",
+"تاقانه دلگم، تو تک‌ترین آدم زندگی منی. تکراری نداری.",
+"مال و مینگم. وقتی با تو حرف می‌زنم، حس می‌کنم رسیدم خونه.",
+"شیرین گیانگم، وقتی می‌خندی، از هر هات چاکلتی شیرین‌تری.",
+"ساده‌ترین آرزوی من اینه: یه روز بشینیم، تو رمان بخونی و من کنارت بیسکوئیت ماهی بخورم.",
+"هرچیکسم، بین این‌همه آدم دنیا، تو رو پیدا کردم. هنوز باورم نمیشه چه شانسی آوردم.",
+"روح و روانگم. حتی وقتی ساکتی، دلم آروم میشه.",
+"دین و دنیاگم. جدی می‌گم، تعارف نیست.",
+"وقتی ناراحتی، می‌دونم نمی‌تونم همه‌چیز رو درست کنم. ولی می‌تونم باشم، همین‌جا، تا هر وقت که لازمه.",
+"یه روز می‌ام و موهات رو می‌بافم و لای هر گره‌ش یه گل بابونه می‌ذارم.",
+"می‌خوام همیشه یه کاری کنم که لپ‌هات از خنده گرد بشن، حتی وقتی خسته‌ای.",
+"دردو له دردم\nایشو له ایشم\nمگر له خاکا\nدسو لی کیشم 💗",
+"هیچ‌وقت با کلمه نمی‌تونم تو رو توصیف کنم. این ۳۰ تا جمله فقط یه شروعه.",
+"اگه فقط یه چیز بتونم بهت بگم، اینه: تو خیلی دوست‌داشتنی‌ای هوزان. خیلی."
+];
+var EMOJI=["💗","🌼","🍫","☕","🐟","📚","🖤","🧸","✨"];
+var KEY="hozan-opened";
+var opened={};
+try{var raw=localStorage.getItem(KEY);if(raw)opened=JSON.parse(raw)||{};}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(opened));}catch(e){}}
+function fa(n){return Number(n).toLocaleString("fa-IR");}
+
+var grid=document.getElementById("grid"),count=document.getElementById("count"),fin=document.getElementById("finale");
+var modal=document.getElementById("modal");
+
+function render(){
+  grid.innerHTML="";
+  var c=0;
+  REASONS.forEach(function(r,i){
+    var b=document.createElement("button");
+    b.type="button";b.className="box"+(opened[i]?" open":"");
+    b.setAttribute("aria-label","جعبه "+fa(i+1));
+    var s=document.createElement("span");
+    s.textContent=opened[i]?"💗":fa(i+1);
+    b.appendChild(s);
+    b.addEventListener("click",function(){show(i);});
+    grid.appendChild(b);
+    if(opened[i])c++;
+  });
+  count.textContent=fa(c)+" از "+fa(REASONS.length)+" جعبه باز شده";
+  fin.classList.toggle("show",c===REASONS.length);
+}
+function show(i){
+  opened[i]=true;save();
+  document.getElementById("mn").textContent="دلیل شماره‌ی "+fa(i+1);
+  document.getElementById("me").textContent=EMOJI[i%EMOJI.length];
+  document.getElementById("mt").textContent=REASONS[i];
+  modal.classList.add("show");
+}
+document.getElementById("mc").addEventListener("click",function(){modal.classList.remove("show");render();});
+modal.addEventListener("click",function(e){if(e.target===modal){modal.classList.remove("show");render();}});
+document.getElementById("rand").addEventListener("click",function(){
+  var left=[];REASONS.forEach(function(_,i){if(!opened[i])left.push(i);});
+  var pool=left.length?left:REASONS.map(function(_,i){return i;});
+  show(pool[Math.floor(Math.random()*pool.length)]);
+});
+
+var items=["❤️","💗","🌹","🌸","🍫","💖"],box=document.getElementById("float");
+for(var k=0;k<16;k++){
+  var s=document.createElement("span");
+  s.textContent=items[k%items.length];
+  s.style.right=(Math.random()*96)+"%";
+  s.style.fontSize=(16+Math.random()*18)+"px";
+  s.style.animationDuration=(9+Math.random()*10)+"s";
+  s.style.animationDelay=(-Math.random()*14)+"s";
+  box.appendChild(s);
+}
+render();
+</script>
+</body>
+</html>
